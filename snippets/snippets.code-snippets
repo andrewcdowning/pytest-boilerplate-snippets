@@ -1,0 +1,86 @@
+{
+	"Unit Test": {
+        "prefix": ["unit", "unit-test"],
+        "body": [
+            "def test_${1}():",
+            "    \"\"\" A simple test for ${1} \"\"\"",
+            "    # Given",
+            "",
+            "    # When",
+            "",
+            "    # Then",
+            "    assert False"
+        ],
+        "description": "A unit test function"
+    },
+    "fixture return": {
+        "prefix": "fixr",
+        "body": [
+          "@pytest.fixture",
+          "def fixture():",
+          "    return {'something': 'for your tests'}",
+          "",
+          "",
+          "def test_fixture(fixture):",
+          "    # Given",
+          "    x = fixture['something']",
+          "    # When",
+          "    ",
+          "    # Then",
+          "    assert False"
+        ],
+        "description": "fixture that returns"
+      },
+
+      "fixture yield": {
+        "prefix": "fixy",
+        "body": [
+          "@pytest.fixture",
+          "def fixture():",
+          "    x = 1",
+          "    yield x",
+          "    # do some clean up",
+          "",
+          "",
+          "def test_fixture(fixture):",
+          "    # Given",
+          "    x = fixture['something']",
+          "    # When",
+          "    ",
+          "    # Then",
+          "    assert False"
+        ],
+        "description": "fixture that yields"
+      },
+
+    "Parameterized Function": {
+        "prefix": "param",
+        "body": [
+          "@pytest.mark.parametrize(\"input,expected\", [(\"x\",\"y\"), (\"w\", \"x\"), (\"y\", \"z\")])",
+          "def test_matching(input, expected):",
+          "    assert input == expected"
+        ],
+        "description": "Parameterized Function"
+      },
+      "monkeypatch env vars": {
+        "prefix": "monkey-env",
+        "body": [
+          "@pytest.fixture",
+          "def os_fixture(monkeypatch):",
+          "    monkeypatch.setenv(\"TEST_ENV_VAR\", \"test\")",
+          "",
+          "",
+          "def test_fixture(fixture):",
+          "    # Given",
+          "   ",
+          "    # When",
+          "    ",
+          "    # Then",
+          "    assert False"
+        ],
+        "description": "monkeypatch env vars"
+      }
+
+
+}
+

@@ -1,0 +1,20 @@
+{
+  "name": "pytest-boilerplate-snippets",
+  "displayName": "pytest-boilerplate-snippets",
+  "description": "pytest boilerplate for quick test setup ",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.73.0"
+  },
+  "categories": [
+    "Snippets"
+  ],
+  "contributes": {
+    "snippets": [
+      {
+        "language": "python",
+        "path": "./snippets/snippets.code-snippets"
+      }
+    ]
+  }
+}
